@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+flask = "*"
+mysql = "*"
+flask-bcrypt = "*"
+pymysql = "*"
+bcrypt = "*"
+flash = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+<body>
+    <nav class="d-flex justify-content-between align-items-center col-12">
+        <div class="text-center">
+        <h1>Welcome {{user.first_name}}</h1>
+    </div>
+        <div class="d-flex col-4 justify-content-around">
+            <a href="/logout" class="btn">Logout</a>
+
+        </div>
+
+    </nav>
+    
+    <div class="col-7 mx-auto">
+        <h2>Library</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Artist</th>
+                    <th>Song</th>
+                    <th>Release Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for song in songs %}
+                    <tr>
+                        <td>{{song.artist}}</td>
+                        <td>{{song.song}}</td>
+                        <td>{{song.date_recorded}}</td>
+                        <td>
+                            {% if song.creator.id == session['user_id'] %}
+                            <a href="/edit/song/{{song.id}}">Edit</a> |
+                            <a href="/destroy/song/{{song.id}}">Delete</a> | 
+                            {% endif%}
+                            <a href="/show/{{song.id}}">Show</a>
+                            
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="/new/song" class="btn">Add New Song</a>
+    </div>
+</body>
+</html>

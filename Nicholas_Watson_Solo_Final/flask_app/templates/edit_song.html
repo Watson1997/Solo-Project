@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Song</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/edit_song.css') }}">
+</head>
+<body>
+    <nav class="d-flex justify-content-between align-items-center col-12">
+        <h1 class="text-center">Edit {{user.first_name}}' Entry</h1>
+        <div class="d-flex col-4 justify-content-around">
+            <a href="/dashboard" class="btn btn-primary">Dashboard</a>
+            <a href="/logout" class="btn btn-info">Logout</a>
+
+        </div>
+
+    </nav>
+    <form action="/update/song/{{edit.id}}" method="post" class="col-10 p-4 my-4 bg-dark text-light mx-auto">
+        <h2>Update Details Below</h2>
+        {% with messages = get_flashed_messages(category_filter=['show']) %}
+            {% if messages %}
+            <div class="alert alert-danger" role="alert">
+                <strong>Flash AHHHHHHH!!!!</strong>
+                    {% for message in messages %}
+                    <p>{{message}}</p>
+                    {% endfor %}
+            </div>
+            {% endif %}
+        {% endwith %}
+        
+        <div class="d-flex justify-content-between col-9">
+            <input type="hidden" name="id" value={{edit.id}}>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="artist">Artist:</label>
+                    <input type="text" name="artist" class="form-control" value="{{edit.artist}}">
+                </div>
+                <div class="form-group">
+                    <label for="song">Song:</label>
+                    <input type="text" name="song" class="form-control" value="{{edit.song}}">
+                </div>
+                <div class="form-group">
+                    <label for="date_recorded">Relase Date:</label>
+                    <input type="date" name="date_recorded" class="form-control" value="{{edit.date_recorded}}">
+                </div>
+
+                <input type="submit" value="Edit Song" class="btn btn-primary">
+                
+
+        </div>
+    </form>
+</body>
+</html>

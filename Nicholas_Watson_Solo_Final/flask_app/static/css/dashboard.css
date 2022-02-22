@@ -1,0 +1,43 @@
+body {
+    background-color: grey whitesmoke black;
+    background: linear-gradient(to left top, black, goldenrod, black) fixed;
+    height: 100%;
+
+    
+}
+
+h1 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding-top: 25px;
+    padding-left: 445px;
+    color: goldenrod;
+    
+}
+
+.btn {
+    color: goldenrod;
+    background-color: black;
+}
+
+
+
+h2 {
+    padding-top:45px;
+    padding-left: 265px;
+}
+
+table{
+    background-color: rgb(63, 61, 61);
+
+}
+
+tr {
+    color: goldenrod;
+    
+}
+
+td {
+    background-color: black;
+    opacity: 70%;
+    
+}

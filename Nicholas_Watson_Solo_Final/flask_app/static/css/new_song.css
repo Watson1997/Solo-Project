@@ -1,0 +1,24 @@
+.btn {
+    margin-top: 10px;
+    color: goldenrod;
+    background-color: rgb(59, 56, 56);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+body {
+    background-color: grey whitesmoke black;
+    background: linear-gradient(to left top, black, goldenrod, black) fixed;
+    height: 100%;
+
+    
+}
+
+h2 {
+    color: goldenrod;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+form{
+    background-image: url(newheader.png);
+    background-size: contain;
+}

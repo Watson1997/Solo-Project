@@ -1,0 +1,41 @@
+body {
+    background-color: grey whitesmoke black;
+    background: linear-gradient(to left top, black, goldenrod, black) fixed;
+    height: 100%;
+    
+}
+
+h1{
+    padding-left: 475px;
+    color: black;
+    opacity: 85%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.card{
+    border: 2px solid black;
+}
+
+p {
+    padding-left: 65px;
+    color: goldenrod;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+
+h2 {
+    padding-left: 65px;
+    color: goldenrod;
+    opacity: 85%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.btn {
+    background-color: black;
+    color: goldenrod;
+}
+
+.mediaplayer {
+    padding-left: 464px;
+    opacity: 75%;
+}
